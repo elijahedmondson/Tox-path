@@ -1,11 +1,9 @@
-
-#data <- read_excel("MHL 19-331-114 Efficacy.xlsx", sheet = "CBC")
-
+#data<-MHL_19_331_121_Efficacy <- read_excel("C:/Users/edmondsonef/Desktop/MHL 19-331-121 Efficacy.xlsx", sheet = "Initial CBC")
 library(ggplot2)
 library(gridExtra)
 library(readxl)
 #library(ggpubr)
-
+setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 ###Generate Data
 
 ### WBC  

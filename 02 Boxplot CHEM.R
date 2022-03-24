@@ -1,12 +1,12 @@
 
-data <- read_excel("MHL 19-331-114 Efficacy.xlsx", sheet = "Chemistry")
+#data<-MHL_19_331_121_Efficacy <- read_excel("C:/Users/edmondsonef/Desktop/MHL 19-331-121 Efficacy.xlsx", sheet = "plot")
 
 library(ggplot2)
 library(gridExtra)
 library(readxl)
 library(ggpubr)
 library(readxl)
-
+setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 ###Generate Data
 data <- read_excel("ADME Tox 202.xlsx", sheet = "Chemistry")
 CBC <- read_excel("ADME Tox 202.xlsx", sheet = "CBC")

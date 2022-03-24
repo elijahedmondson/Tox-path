@@ -3,7 +3,7 @@
 library(ggplot2)
 library(gridExtra)
 library(readxl)
-
+setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 
 ### Body Weight  
 my_mean = aggregate(data$Weight, by=list(data$Group), mean) ; colnames(my_mean)=c("Group" , "mean")
