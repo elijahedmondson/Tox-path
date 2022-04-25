@@ -176,7 +176,7 @@ my_info$ref.hi = c(12.2)
 
 ### Ca plot
 Ca <- ggplot(data) + 
-  scale_y_continuous(name = "Ca2+") +
+  scale_y_continuous(name = "Ca2+", limits=c(8,12.5)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_jitter(aes(x = Group, y = Ca, color = Sex), width = 0.1, show.legend=F)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 2) +
@@ -214,7 +214,7 @@ my_info$ref.hi = c(174)
 
 ### NaPlus plot
 NaPlus <- ggplot(data) + 
-  scale_y_continuous(name = "Na+") +
+  scale_y_continuous(name = "Na+", limits=c(110,185)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_jitter(aes(x = Group, y = NaPlus, color = Sex), width = 0.1, show.legend=F)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 2) +
@@ -243,7 +243,7 @@ KPlus <- ggplot(data) +
   theme(axis.title.x=element_blank())
 
 
-tiff("Chem.tiff", units="in", width=10, height=7, res=600)
+tiff("Chem.tiff", units="in", width=9, height=10, res=600)
 #Add A:G ratio
-grid.arrange(TP, ALB, GLOB, ALP, ALT, BUN, CRE, GLU, Ca, PHOS, KPlus, NaPlus, ncol = 4, nrow = 3)
+grid.arrange(TP, ALB, GLOB, ALP, ALT, BUN, CRE, GLU, Ca, PHOS, KPlus, NaPlus, ncol = 3, nrow = 4)
 dev.off()

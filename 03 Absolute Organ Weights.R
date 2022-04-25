@@ -16,7 +16,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 BW <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = Weight, color = Sex), width = 0.1, size = 2, show.legend=F)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
-  scale_y_continuous(name = "Body Weight (95% CI)")+#, limits=c(21, 26.5)) +
+  scale_y_continuous(name = "Body Weight (95% CI)", limits=c(18, 28.5)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=0,hjust=0.5)) +
@@ -137,7 +137,11 @@ Graft <- ggplot(data) +
   theme(axis.text.x=element_text(angle=0,hjust=0.5)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
 
+tiff("BW.tiff", units="in", width=6, height=2.5, res=600)
+grid.arrange(BW, 
+             ncol = 1, nrow = 1)
 
+dev.off()
 
 ### Make multiple plots
 tiff("Absolute Organ Weights.tiff", units="in", width=9, height=5, res=600)
