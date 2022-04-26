@@ -164,7 +164,7 @@ PLT <- ggplot(data) +
 
 ### Generate Multiplots
 
-tiff("WBC.tiff", units="in", width=8, height=4.667, res=600)
+tiff("WBC.tiff", units="in", width=10, height=4.667, res=300)
 grid.arrange(WBC, NE, LY, MO, EO, BA, ncol = 3, nrow = 2)
 dev.off()
 
@@ -336,7 +336,7 @@ RDW <- ggplot(data) +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
 
-tiff("RBC.tiff", units="in", width=8, height=7, res=600)
+tiff("RBC.tiff", units="in", width=10, height=7, res=300)
 grid.arrange(HCT, Hb, MCH, MCHC, MCV, RBC, RDW, Retics, ncol = 3, nrow = 3)
 dev.off()
 
@@ -396,6 +396,6 @@ MPV <- ggplot(data) +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
 
-tiff("Platelets.tiff", units="in", width=8, height=2.33, res=600)
+tiff("Platelets.tiff", units="in", width=10, height=2.33, res=300)
 grid.arrange(PLT, MPV, ncol = 3, nrow = 1)
 dev.off()
