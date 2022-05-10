@@ -245,5 +245,6 @@ KPlus <- ggplot(data) +
 
 tiff("Chem.tiff", units="in", width=11, height=8, res=300)
 #Add A:G ratio
-grid.arrange(TP, ALB, GLOB, ALP, ALT, BUN, CRE, GLU, Ca, PHOS, KPlus, NaPlus, ncol = 4, nrow = 3)
+grid.arrange(TP, ALB, GLOB, ALP, ALT, BUN, CRE, GLU, Ca, PHOS, KPlus, NaPlus, 
+             ncol = 4, nrow = 3, top = "Clinical Chemistry")
 dev.off()
