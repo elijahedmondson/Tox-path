@@ -3,6 +3,7 @@
 library(ggplot2)
 library(gridExtra)
 library(readxl)
+library(patchwork)
 
 setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 
