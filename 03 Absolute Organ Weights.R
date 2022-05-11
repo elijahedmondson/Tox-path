@@ -33,7 +33,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 ### Brain plot
 Brain <- ggplot(data) + 
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
-  scale_y_continuous(name = "Brain Weight (grams)", limits=c(0.3, 0.55)) +
+  scale_y_continuous(name = "Brain (grams)", limits=c(0.3, 0.55)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
   geom_jitter(aes(x = Group, y = data$"Brain Weight", color = `Age Group`), width = 0.1)+
   theme_bw() +
@@ -50,7 +50,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 ### Heart plot
 Heart <- ggplot(data) + 
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
-  scale_y_continuous(name = "Heart Weight (grams)")+#, limits=c(0.06, 0.15)) +
+  scale_y_continuous(name = "Heart (grams)")+#, limits=c(0.06, 0.15)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
   geom_jitter(aes(x = Group, y = data$'Heart Weight', color = `Age Group`), width = 0.1)+
   theme_bw() +
@@ -66,7 +66,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 ### Liver plot
 Liver <- ggplot(data) + 
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
-  scale_y_continuous(name = "Liver Weight (grams)")+#, limits=c(0.9, 1.3)) +
+  scale_y_continuous(name = "Liver (grams)")+#, limits=c(0.9, 1.3)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
   geom_jitter(aes(x = Group, y = data$'Liver Weight', color = `Age Group`), width = 0.1)+
   theme_bw() +
@@ -82,7 +82,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 ### Lung plot
 Lung <- ggplot(data) + 
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
-  scale_y_continuous(name = "Lung Weight (grams)")+#, limits=c(0.1, 0.36)) +
+  scale_y_continuous(name = "Lung (grams)")+#, limits=c(0.1, 0.36)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
   geom_jitter(aes(x = Group, y = data$'Lung Weight', color = `Age Group`), width = 0.1)+
   theme_bw() +
@@ -98,7 +98,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 ### Spleen plot
 Spleen <- ggplot(data) + 
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
-  scale_y_continuous(name = "Spleen Weight (grams)")+#, limits=c(0.009, 0.1)) +
+  scale_y_continuous(name = "Spleen (grams)")+#, limits=c(0.009, 0.1)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
   geom_jitter(aes(x = Group, y = data$'Spleen Weight', color = `Age Group`), width = 0.1) +
   theme_bw() +
@@ -114,7 +114,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 ### Kidney plot
 Kidney <- ggplot(data) + 
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
-  scale_y_continuous(name = "Kidney Weight (grams)")+#, limits=c(0.18, 0.33)) +
+  scale_y_continuous(name = "Kidney (grams)")+#, limits=c(0.18, 0.33)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
   geom_jitter(aes(x = Group, y = data$'Kidney Weight', color = `Age Group`), width = 0.1) +
   theme_bw() +
