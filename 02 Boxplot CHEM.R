@@ -34,6 +34,26 @@ AGR <- ggplot(data) +
   theme(axis.title.x=element_blank())
 
 
+### BUN:Creatinine Ratio
+data<-dplyr:: mutate(data, BCR = (BUN/CRE))
+my_mean = aggregate(data$BCR, by=list(data$Group), mean, na.rm = T) ; colnames(my_mean)=c("Group" , "mean")
+my_CI = aggregate(data$BCR , by=list(data$Group) , FUN = function(x) t.test(x)$conf.int) ; colnames(my_CI)=c("Group" , "CI")
+my_info = merge(my_mean , my_CI , by.x=1 , by.y=1)
+my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
+#my_info$ref.low = c()
+#my_info$ref.hi = c()
+
+### BCR Plot
+BCR <- ggplot(data) + 
+  scale_y_continuous(name = "BUN:Creatinine") +
+  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
+  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
+  geom_jitter(aes(x = Group, y = BCR, color = `Age Group`), width = 0.1)+
+  theme_bw() +
+  theme(axis.text.x=element_text(angle=25,hjust=1)) +
+  theme(axis.title.x=element_blank())
+
 ### ALB  
 my_mean = aggregate(data$ALB, by=list(data$Group), mean, na.rm = T) ; colnames(my_mean)=c("Group" , "mean")
 my_CI = aggregate(data$ALB , by=list(data$Group) , FUN = function(x) t.test(x)$conf.int) ; colnames(my_CI)=c("Group" , "CI")
@@ -267,7 +287,7 @@ KPlus <- ggplot(data) +
 
 library(patchwork)
 tiff("03. Chem.tiff", units="in", width=12, height=10, res=300)
-TP + ALB + GLOB + AGR + ALP + ALT + BUN + CRE + Ca + PHOS + KPlus + NaPlus + GLU + 
+TP + ALB + GLOB + AGR + BUN + CRE + BCR + GLU + Ca + PHOS + KPlus + NaPlus + ALP + ALT + 
   plot_layout(guides = "collect") + 
   plot_annotation(title = "Clinical Chemistry")
 dev.off()
