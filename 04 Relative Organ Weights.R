@@ -17,7 +17,7 @@ BW <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Body Weight (95% CI)")+#, limits=c(21, 26.5)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.1 , size=0.5) +
-  geom_jitter(aes(x = Group, y = Weight, color = `Age Group`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = Weight, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -34,7 +34,7 @@ Brain <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Brain (% BW)")+#, limits=c(1.8, 2.3)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$"Brain % BW", color = `Age Group`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = data$"Brain % BW", color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -51,7 +51,7 @@ Heart <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Heart (% BW)")+#, limits=c(0.37, 0.56)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Heart % BW', color = `Age Group`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = data$'Heart % BW', color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -67,7 +67,7 @@ Liver <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Liver (% BW)")+#, limits=c(4, 5.3)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Liver % BW', color = `Age Group`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = data$'Liver % BW', color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -83,7 +83,7 @@ Lung <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Lung (% BW)")+#, limits=c(0.5, 1.5)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Lung % BW', color = `Age Group`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = data$'Lung % BW', color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -99,7 +99,7 @@ Spleen <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Spleen (% BW)")+#, limits=c(0.04, 0.2)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Spleen % BW', color = `Age Group`), width = 0.1) +
+  geom_jitter(aes(x = Group, y = data$'Spleen % BW', color = `Age`), width = 0.1) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -115,24 +115,24 @@ Kidney <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Kidney (% BW)")+#, limits=c(0.8, 1.4)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Kidney % BW', color = `Age Group`), width = 0.1) +
+  geom_jitter(aes(x = Group, y = data$'Kidney % BW', color = `Age`), width = 0.1) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
 
 
 ### Graft Weight
-my_mean = aggregate(data$'Allograft Weight', by=list(data$Group), mean, na.rm = T) ; colnames(my_mean)=c("Group" , "mean")
-my_CI = aggregate(data$'Allograft Weight' , by=list(data$Group) , FUN = function(x) t.test(x)$conf.int) ; colnames(my_CI)=c("Group" , "CI")
+my_mean = aggregate(data$'Graft % BW', by=list(data$Group), mean, na.rm = T) ; colnames(my_mean)=c("Group" , "mean")
+my_CI = aggregate(data$'Graft % BW' , by=list(data$Group) , FUN = function(x) t.test(x)$conf.int) ; colnames(my_CI)=c("Group" , "CI")
 my_info = merge(my_mean , my_CI , by.x=1 , by.y=1)
 my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 
 ### Graft plot
 Graft <- ggplot(data) + 
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
-  scale_y_continuous(name = "Graft Weight")+#, limits=c(0, 10)) +
+  scale_y_continuous(name = "Graft % BW")+#, limits=c(0, 10)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Allograft Weight', color = `Age Group`), width = 0.1) +
+  geom_jitter(aes(x = Group, y = data$'Graft % BW', color = `Age`), width = 0.1) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -147,3 +147,11 @@ tiff("05. Relative Organ Weights.tiff", units="in", width=8, height=7.5, res=300
   plot_annotation(title = "Relative Organ Weights (% of BW)")
 dev.off()
 
+tiff("05. Relative Organ Weights.tiff", units="in", width=8, height=10, res=300)
+(BW) / 
+  (Graft | Heart) /
+  (Lung | Kidney) /
+  (Spleen | Liver) /
+  plot_layout(guides = "collect") + 
+  plot_annotation(title = "Absolute Organ Weights (grams)")
+dev.off()

@@ -100,7 +100,7 @@ my_CI = aggregate(data$ALT , by=list(data$Group) , FUN = function(x) t.test(x)$c
 my_info = merge(my_mean , my_CI , by.x=1 , by.y=1)
 my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 my_info$ref.low = c(21)
-my_info$ref.hi = c(66)
+my_info$ref.hi = c(168)
 
 ### ALT plot
 ALT <- ggplot(data) + 
