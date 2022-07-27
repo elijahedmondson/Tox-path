@@ -18,7 +18,7 @@ BW <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Body Weight (95% CI)") +#, limits=c(18, 28.5)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.1 , size=0.5) +
-  geom_jitter(aes(x = Group, y = Weight, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = Weight, color = `Sex`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -35,7 +35,7 @@ Brain <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Brain (grams)", limits=c(0.3, 0.55)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$"Brain Weight", color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = data$"Brain Weight", color = `Sex`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -52,7 +52,7 @@ Heart <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Heart (grams)")+#, limits=c(0.06, 0.15)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Heart Weight', color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = data$'Heart Weight', color = `Sex`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -68,7 +68,7 @@ Liver <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Liver (grams)")+#, limits=c(0.9, 1.3)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Liver Weight', color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = data$'Liver Weight', color = `Sex`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -84,7 +84,7 @@ Lung <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Lung (grams)")+#, limits=c(0.1, 0.36)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Lung Weight', color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = data$'Lung Weight', color = `Sex`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -100,7 +100,7 @@ Spleen <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Spleen (grams)")+#, limits=c(0.009, 0.1)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Spleen Weight', color = `Groups`), width = 0.1) +
+  geom_jitter(aes(x = Group, y = data$'Spleen Weight', color = `Sex`), width = 0.1) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -116,7 +116,7 @@ Kidney <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Kidney (grams)")+#, limits=c(0.18, 0.33)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Kidney Weight', color = `Groups`), width = 0.1) +
+  geom_jitter(aes(x = Group, y = data$'Kidney Weight', color = `Sex`), width = 0.1) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
@@ -133,7 +133,7 @@ Graft <- ggplot(data) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "grey", size = 2) +
   scale_y_continuous(name = "Graft")+#, limits=c(0, 10)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "grey", width = 0.2 , size=0.5) +
-  geom_jitter(aes(x = Group, y = data$'Graft Weight', color = `Groups`), width = 0.1) +
+  geom_jitter(aes(x = Group, y = data$'Graft Weight', color = `Sex`), width = 0.1) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 10))
