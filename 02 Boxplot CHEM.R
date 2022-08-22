@@ -28,7 +28,7 @@ AGR <- ggplot(data) +
   #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = AGR, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = AGR, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -49,7 +49,7 @@ BCR <- ggplot(data) +
   #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = BCR, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = BCR, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -68,7 +68,7 @@ ALB <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = ALB, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = ALB, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -88,7 +88,7 @@ ALP <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = ALP, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = ALP, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -108,7 +108,7 @@ ALT <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = ALT, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = ALT, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -127,7 +127,7 @@ BUN <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = BUN, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = BUN, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -146,7 +146,7 @@ CRE <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   ##geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = CRE, color = `Groups`), height = 0.005, width = 0.1)+
+  geom_jitter(aes(x = Group, y = CRE, color = `Age`), height = 0.005, width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -165,7 +165,7 @@ GLU <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = GLU, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = GLU, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -184,7 +184,7 @@ TP <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = TP, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = TP, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -203,7 +203,7 @@ GLOB <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = GLOB, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = GLOB, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -222,7 +222,7 @@ Ca <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = Ca, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = Ca, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -241,7 +241,7 @@ PHOS <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = PHOS, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = PHOS, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -260,7 +260,7 @@ NaPlus <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = NaPlus, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = NaPlus, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -279,7 +279,7 @@ KPlus <- ggplot(data) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = KPlus, color = `Groups`), width = 0.1)+
+  geom_jitter(aes(x = Group, y = KPlus, color = `Age`), width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
