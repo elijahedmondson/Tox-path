@@ -23,9 +23,9 @@ my_info$ref.hi = c(12.33)
 WBC <- ggplot(data) + 
   scale_y_continuous(name = "White Blood Cells") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = WBC, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = WBC, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -43,9 +43,9 @@ my_info$ref.hi = c(6.04)
 NE <- ggplot(data) + 
   scale_y_continuous(name = "Neutrophils") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = NE, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = NE, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -63,9 +63,9 @@ my_info$ref.hi = c(6.99)
 LY <- ggplot(data) + 
   scale_y_continuous(name = "Lymphocyes") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = LY, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = LY, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -82,9 +82,9 @@ my_info$ref.hi = c(1.04)
 MO <- ggplot(data) + 
   scale_y_continuous(name = "Monocytes") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = MO, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = MO, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -101,9 +101,9 @@ my_info$ref.hi = c(0.25)
 EO <- ggplot(data) + 
   scale_y_continuous(name = "Eosinophils") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = EO, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = EO, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -120,9 +120,9 @@ my_info$ref.hi = c(0.23)
 BA <- ggplot(data) + 
   scale_y_continuous(name = "Basophils") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = BA, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = BA, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -141,9 +141,9 @@ my_info$ref.hi = c(1444.39)
 PLT <- ggplot(data) + 
   scale_y_continuous(name = "Platelets") + 
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = PLT, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = PLT, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -166,9 +166,9 @@ my_info$ref.hi = c(50.71)
 HCT <- ggplot(data) + 
   scale_y_continuous(name = "Hematocrit", limits = c(29, 55)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = HCT, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = HCT, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -185,10 +185,10 @@ my_info$ref.hi = c(6)
 ### Reticulocytes plot
 Retics <- ggplot(data) + 
   scale_y_continuous(name = "Reticulocytes") + 
-  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = Retics, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_jitter(aes(x = Group, y = Retics, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  ##geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -205,9 +205,9 @@ my_info$ref.hi = c(20)
 MCH <- ggplot(data) + 
   scale_y_continuous(name = "MCH", limits = c(12, 22)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = MCH, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = MCH, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -224,9 +224,9 @@ my_info$ref.hi = c(67)
 MCV <- ggplot(data) + 
   scale_y_continuous(name = "MCV", limits = c(35, 70)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = MCV, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = MCV, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -241,11 +241,11 @@ my_info$ref.hi = c(33)
 
 ### MCHC plot
 MCHC <- ggplot(data) + 
-  scale_y_continuous(name = "MCHC", limits = c(27, 35)) +
+  scale_y_continuous(name = "MCHC", limits = c(27, 40)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = MCHC, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = MCHC, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -262,9 +262,9 @@ my_info$ref.hi = c(15.6)
 Hb <- ggplot(data) + 
   scale_y_continuous(name = "Hb", limits = c(7, 18)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = Hb, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = Hb, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -281,9 +281,9 @@ my_info$ref.hi = c(11)
 RBC <- ggplot(data) + 
   scale_y_continuous(name = "RBC", limits = c(4.5, 11.5)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = RBC, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = RBC, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -300,9 +300,9 @@ my_info$ref.hi = c(20)
 RDW <- ggplot(data) + 
   scale_y_continuous(name = "RDW", limits = c(11, 21)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = RDW, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = RDW, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -325,9 +325,9 @@ my_info$ref.hi = c(1444.39)
 PLT <- ggplot(data) + 
   scale_y_continuous(name = "Platelets") + 
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = PLT, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = PLT, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -345,9 +345,9 @@ my_info$ref.hi = c(10.6)
 MPV <- ggplot(data) + 
   scale_y_continuous(name = "MPV", limits  = c(3.5, 10.65)) + 
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
-  geom_jitter(aes(x = Group, y = MPV, color = `Groups`), width = 0.1, show.legend=T, size = 1.5)+
+  geom_jitter(aes(x = Group, y = MPV, color = `Day`), width = 0.1, show.legend=T, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7)  +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 12))
@@ -357,6 +357,12 @@ MPV <- ggplot(data) +
 #####
 #####PLOT CBC
 #####
+(WBC | NE) /
+  (LY | MO) / 
+  (EO | BA )/
+  (PLT | MPV) /
+  plot_layout(guides = "collect") + 
+  plot_annotation(title = "CBC: White Blood Cell and Platelet Counts")
 
 tiff("01. WBC+PLT.tiff", units="in", width=10, height=10, res=300)
 (WBC | NE) /
@@ -367,6 +373,13 @@ tiff("01. WBC+PLT.tiff", units="in", width=10, height=10, res=300)
   plot_annotation(title = "CBC: White Blood Cell and Platelet Counts")
 dev.off()
 
+
+(HCT | RBC) /
+  (Hb | MCH) / 
+  (MCHC | MCV) /
+  (Retics | RDW) /
+  plot_layout(guides = "collect") + 
+  plot_annotation(title = "CBC: Erythroid Parameters")
 
 tiff("02. RBC.tiff", units="in", width=10, height=10, res=300)
 (HCT | RBC) /
@@ -397,9 +410,9 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 AGR <- ggplot(data) + 
   scale_y_continuous(name = "Albumin:Globulin") +
   #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = AGR, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = AGR, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -418,9 +431,9 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 BCR <- ggplot(data) + 
   scale_y_continuous(name = "BUN:Creatinine") +
   #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = BCR, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = BCR, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -437,9 +450,9 @@ my_info$ref.hi = c(4.8)
 ALB <- ggplot(data) + 
   scale_y_continuous(name = "Albumin", limits = c(2.2,5.5)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = ALB, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = ALB, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -457,9 +470,9 @@ my_info$ref.hi = c(190)
 ALP <- ggplot(data) + 
   scale_y_continuous(name = "ALP") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = ALP, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = ALP, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -477,9 +490,9 @@ my_info$ref.hi = c(168)
 ALT <- ggplot(data) + 
   scale_y_continuous(name = "ALT") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = ALT, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = ALT, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -496,9 +509,9 @@ my_info$ref.hi = c(34.2)
 BUN <- ggplot(data) + 
   scale_y_continuous(name = "BUN") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = BUN, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = BUN, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -515,9 +528,9 @@ my_info$ref.hi = c(0.5)
 CRE <- ggplot(data) + 
   scale_y_continuous(name = "Creatinine") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = CRE, color = `Groups`), height = 0.005, width = 0.1, size = 2)+
+  geom_jitter(aes(x = Group, y = CRE, color = `Day`), height = 0.005, width = 0.1, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  ##geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -534,9 +547,9 @@ my_info$ref.hi = c(292)
 GLU <- ggplot(data) + 
   scale_y_continuous(name = "GLU") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = GLU, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = GLU, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -553,9 +566,9 @@ my_info$ref.hi = c(6.6)
 TP <- ggplot(data) + 
   scale_y_continuous(name = "Total Protein", limits = c(4.3,7)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = TP, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = TP, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -572,9 +585,9 @@ my_info$ref.hi = c(3.1)
 GLOB <- ggplot(data) + 
   scale_y_continuous(name = "GLOB") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = GLOB, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = GLOB, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -591,9 +604,9 @@ my_info$ref.hi = c(12.2)
 Ca <- ggplot(data) + 
   scale_y_continuous(name = "Ca2+", limits=c(8,13.5)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = Ca, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = Ca, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -610,16 +623,16 @@ my_info$ref.hi = c(13.1)
 PHOS <- ggplot(data) + 
   scale_y_continuous(name = "PHOS") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = PHOS, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = PHOS, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
 
 ### NaPlus
-my_mean = aggregate(data$NaPlus, by=list(data$Group), mean, na.rm = T) ; colnames(my_mean)=c("Group" , "mean")
-my_CI = aggregate(data$NaPlus , by=list(data$Group) , FUN = function(x) t.test(x)$conf.int) ; colnames(my_CI)=c("Group" , "CI")
+my_mean = aggregate(data$`Na Plus`, by=list(data$Group), mean, na.rm = T) ; colnames(my_mean)=c("Group" , "mean")
+my_CI = aggregate(data$`Na Plus` , by=list(data$Group) , FUN = function(x) t.test(x)$conf.int) ; colnames(my_CI)=c("Group" , "CI")
 my_info = merge(my_mean , my_CI , by.x=1 , by.y=1)
 my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 my_info$ref.low = c(124)
@@ -629,9 +642,9 @@ my_info$ref.hi = c(174)
 NaPlus <- ggplot(data) + 
   scale_y_continuous(name = "Na+", limits=c(110,185)) +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = NaPlus, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = `Na Plus`, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
@@ -648,9 +661,9 @@ my_info$ref.hi = c(11.8)
 KPlus <- ggplot(data) + 
   scale_y_continuous(name = "K+") +
   geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=8) +
-  geom_jitter(aes(x = Group, y = KPlus, color = `Groups`), width = 0.08, size = 2)+
+  geom_jitter(aes(x = Group, y = KPlus, color = `Day`), width = 0.08, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
+  #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4, size=0.7) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank(), text = element_text(size = 14))
