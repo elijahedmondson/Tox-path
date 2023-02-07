@@ -20,7 +20,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 
 ### BW Plot
 BW <- ggplot(data) + 
-  scale_y_continuous(name = "Body Weight (95% CI)", limits=c(20, 35)) +
+  scale_y_continuous(name = "Body Weight (95% CI)") +#, limits=c(20, 35)) + #ylim=c(0, ymx*1.02)
   geom_jitter(aes(x = Group, y = Weight, color = `Groups`), width = 0.1, size = 2)+
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.5) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
@@ -56,7 +56,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Heart <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Heart Weight', color = `Groups`), width = 0.1, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Heart (grams)", limits=c(0.09, 0.2)) +
+  scale_y_continuous(name = "Heart (grams)") +#, limits=c(0.09, 0.2)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -72,7 +72,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Liver <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Liver Weight', color = `Groups`), width = 0.1, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Liver (grams)", limits=c(1, 1.7)) +
+  scale_y_continuous(name = "Liver (grams)") +#, limits=c(1, 1.7)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -88,7 +88,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Lung <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Lung Weight', color = `Groups`), width = 0.1, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Lung (grams)", limits=c(0.15, 0.25)) +
+  scale_y_continuous(name = "Lung (grams)") +#, limits=c(0.15, 0.25)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -103,7 +103,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 ### Spleen plot
 Spleen <- ggplot(data) + 
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Spleen (grams)", limits=c(0.05, 0.1)) +
+  scale_y_continuous(name = "Spleen (grams)") +#, limits=c(0.05, 0.1)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   geom_jitter(aes(x = Group, y = data$'Spleen Weight', color = `Groups`), width = 0.1, size = 2) +
   theme_bw() +
@@ -120,7 +120,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Kidney <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Kidney Weight', color = `Groups`), width = 0.1, size = 2) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Kidney (grams)", limits=c(0.2, 0.4)) +
+  scale_y_continuous(name = "Kidney (grams)") +#, limits=c(0.2, 0.4)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -150,8 +150,8 @@ Graft <- ggplot(data) +
 
 tiff("04. Absolute Organ Weights.tiff", units="in", width=9, height=10, res=300)
 (BW) /
-  (Graft | Heart) /
-#  (Brain | Heart) /
+#  (Graft | Heart) /
+  (Brain | Heart) /
   (Lung | Kidney) /
   (Spleen | Liver) /
   plot_layout(guides = "collect") +
@@ -235,7 +235,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Heart <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Heart % BW', color = `Groups`), width = 0.1, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Heart (% BW)", limits=c(0.3, 0.6)) +
+  scale_y_continuous(name = "Heart (% BW)") +#, limits=c(0.3, 0.6)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -251,7 +251,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Liver <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Liver % BW', color = `Groups`), width = 0.1, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Liver (% BW)", limits=c(3.5, 5.3)) +
+  scale_y_continuous(name = "Liver (% BW)") +#, limits=c(3.5, 5.3)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -267,7 +267,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Lung <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Lung % BW', color = `Groups`), width = 0.1, size = 2)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Lung (% BW)", limits=c(0.5, 0.9)) +
+  scale_y_continuous(name = "Lung (% BW)") +#, limits=c(0.5, 0.9)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -283,7 +283,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Spleen <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Spleen % BW', color = `Groups`), width = 0.1, size = 2) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Spleen (% BW)", limits=c(0.2, 0.35)) +
+  scale_y_continuous(name = "Spleen (% BW)") +#, limits=c(0.2, 0.35)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -299,7 +299,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Kidney <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Kidney % BW', color = `Groups`), width = 0.1, size = 2) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Kidney (% BW)", limits=c(0.8, 1.3)) +
+  scale_y_continuous(name = "Kidney (% BW)") +#, limits=c(0.8, 1.3)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -316,7 +316,7 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 Graft <- ggplot(data) + 
   geom_jitter(aes(x = Group, y = data$'Graft % BW', color = `Groups`), width = 0.1, size = 2) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 3) +
-  scale_y_continuous(name = "Graft % BW", limits=c(1, 3.5)) +
+  scale_y_continuous(name = "Graft % BW") +#, limits=c(1, 3.5)) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.4 , size=0.5) +
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
@@ -331,7 +331,8 @@ Graft <- ggplot(data) +
 ### Make multiple plots
 tiff("05. Relative Organ Weights.tiff", units="in", width=9, height=10, res=300)
 (BW) / 
-  (Graft | Heart) /
+  #(Graft | Heart) /
+  (Brain | Heart) /
   (Lung | Kidney) /
   (Spleen | Liver) /
   plot_layout(guides = "collect") + 
