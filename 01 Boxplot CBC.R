@@ -1,6 +1,7 @@
 #data<-MHL_19_331_121_Efficacy <- read_excel("C:/Users/edmondsonef/Desktop/MHL 19-331-121 Efficacy.xlsx", sheet = "Initial CBC")
 library(ggplot2)
 library(gridExtra)
+library(patchwork)
 library(readxl)
 #library(ggpubr)
 setwd("C:/Users/edmondsonef/Desktop/R-plots/")
@@ -403,11 +404,11 @@ dev.off()
 #dev.off()
 
 
-tiff("05. RBC.tiff", units="in", width=9, height=7.5, res=300)
+tiff("05. RBC.tiff", units="in", width=9, height=10, res=300)
 (HCT | RBC) / 
   (Hb | MCH) /
   (MCHC | MCV) /
-  #(Retics | ) /
+  (Retics | RDW) /
   plot_layout(guides = "collect") + 
   plot_annotation(title = "CBC: Erythroid Parameters")
 dev.off()
