@@ -168,8 +168,8 @@ tiff("04. Absolute Organ Weights.tiff", units="in", width=9, height=10, res=300)
 (BW) /
 #  (Graft | Heart) /
   (Brain | Heart) /
-  (Lung | Kidney) /
-  (Spleen | Liver) /
+  (Liver | Kidney) /
+  (Spleen | Lung) /
   plot_layout(guides = "collect") +
   plot_annotation(title = "Absolute Organ Weights (grams)")
 dev.off()
@@ -364,8 +364,8 @@ tiff("05. Relative Organ Weights.tiff", units="in", width=9, height=10, res=300)
 (BW) / 
   #(Graft | Heart) /
   (Brain | Heart) /
-  (Lung | Kidney) /
-  (Spleen | Liver) /
+  (Liver | Kidney) /
+  (Spleen | Lung) /
   plot_layout(guides = "collect") + 
   plot_annotation(title = "Relative Organ Weights (% of body weight)")
 dev.off()
