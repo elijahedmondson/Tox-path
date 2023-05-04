@@ -10,7 +10,8 @@ setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 #####
 #####Absolute Weights
 #####
-
+library(dplyr)
+data <- dplyr::filter(data, Censor == 1)
 
 ### Body Weight  
 my_mean = aggregate(data$Weight, by=list(data$Group), mean, na.rm = T) ; colnames(my_mean)=c("Group" , "mean")
@@ -19,8 +20,8 @@ my_info = merge(my_mean , my_CI , by.x=1 , by.y=1)
 my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 
 ### BW Plot   , limits=c(10, 30)) +
-ymx = max(data$Weight)
-ymin = min(data$Weight)
+ymx = max(data$Weight, na.rm = T)
+ymin = min(data$Weight, na.rm = T)
 BW <- ggplot(data) + 
   scale_y_continuous(name = "Body Weight (95% CI)", limits=c(ymin*.98, ymx*1.02))+
   geom_jitter(aes(x = Group, y = Weight, color = `Groups`), width = 0.1, size = 2)+
@@ -164,12 +165,11 @@ Graft <- ggplot(data) +
 #####Plot Absolute Weights
 #####
 
-tiff("04. Absolute Organ Weights.tiff", units="in", width=9, height=10, res=300)
+tiff("Absolute Organ Weights.tiff", units="in", width=14, height=8, res=200)
 (BW) /
 #  (Graft | Heart) /
-  (Brain | Heart) /
-  (Liver | Kidney) /
-  (Spleen | Lung) /
+  (Brain | Heart | Liver) /
+  (Spleen | Kidney| Lung) /
   plot_layout(guides = "collect") +
   plot_annotation(title = "Absolute Organ Weights (grams)")
 dev.off()
@@ -360,12 +360,11 @@ Graft <- ggplot(data) +
 #####
 
 ### Make multiple plots
-tiff("05. Relative Organ Weights.tiff", units="in", width=9, height=10, res=300)
+tiff("Relative Organ Weights.tiff", units="in", width=14, height=8, res=200)
 (BW) / 
   #(Graft | Heart) /
-  (Brain | Heart) /
-  (Liver | Kidney) /
-  (Spleen | Lung) /
+  (Brain | Heart | Liver) /
+  (Spleen | Kidney| Lung) /
   plot_layout(guides = "collect") + 
   plot_annotation(title = "Relative Organ Weights (% of body weight)")
 dev.off()
