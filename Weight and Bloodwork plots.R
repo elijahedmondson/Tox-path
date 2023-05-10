@@ -4,26 +4,26 @@ library(dplyr)
 library(readxl)
 library(patchwork)
 
-data <- read_excel("C:/Users/edmondsonef/Desktop/MHL 22-331-17 PK.xlsx")
-data <- dplyr::filter(data, Censor == 1)
+#data <- read_excel("C:/Users/edmondsonef/Desktop/MHL 22-331-17 PK.xlsx")
+#data <- dplyr::filter(data, Censor == 1)
 
 #####Organ Weight
 #####
-dataW <- dplyr::select(data, PHLNbr,Group, Groups,
+dataW <- dplyr::select(data, PHLNbr, Group, Groups,
                        Weight, 
                        `Brain Weight`, 
                        `Heart Weight`, 
                        `Kidney Weight`, 
                        `Liver Weight`, 
                        `Lung Weight`, 
-                       `Spleen Weight`)
+                       `Spleen Weight`, Age)
 
 body_weight <- dataW %>% gather(key= "Organ", grams, 4) %>% 
   ggplot(aes(x = factor(Group), y = grams))+
   geom_boxplot(outlier.shape = NA, colour = "lightgray")+  
   theme_bw() +
   theme(axis.title.x=element_blank(), text = element_text(size = 16))+
-  geom_jitter(aes(x = Group, y = grams, color = `Groups`), width = 0.1, size = 4)+
+  geom_jitter(aes(x = Group, y = grams, color = dataW$`Age`), width = 0.1, size = 4)+
   facet_wrap(~Organ, scales = "free")
 body_weight
 
@@ -33,12 +33,13 @@ organ_weight <- dataW %>%
   geom_boxplot(outlier.shape = NA, colour = "lightgray")+  
   theme_bw() +
   theme(axis.title.x=element_blank(), text = element_text(size = 16))+
-  geom_jitter(aes(x = Group, y = grams, color = `Groups`), width = 0.1, size = 4)+
+  geom_jitter(aes(x = Group, y = grams, color = `Age`), width = 0.1, size = 4)+
   facet_wrap(~Organ, scales = "free", nrow=2)
 organ_weight
 
+setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 
-tiff("Absolute Organ Weights.tiff", units="in", width=22, height=8, res=100)
+tiff("Absolute Organ Weights-age.tiff", units="in", width=22, height=8, res=100)
 (body_weight | organ_weight)+
   plot_layout(guides = "collect") +
   plot_layout(widths = c(2, 3))+
@@ -58,7 +59,7 @@ dataWPerc <- dplyr::select(data, PHLNbr,Group, Groups,
                        `Kidney % BW`, 
                        `Liver % BW`, 
                        `Lung % BW`,
-                       `Spleen % BW`)
+                       `Spleen % BW`, Age)
 
 
 relative_weight <- dataWPerc %>% 
@@ -67,11 +68,11 @@ relative_weight <- dataWPerc %>%
   geom_boxplot(outlier.shape = NA, colour = "lightgray")+  
   theme_bw() +
   theme(axis.title.x=element_blank(), text = element_text(size = 16))+
-  geom_jitter(aes(x = Group, y = value, color = `Groups`), width = 0.1, size = 4)+
+  geom_jitter(aes(x = Group, y = value, color = `Age`), width = 0.1, size = 4)+
   facet_wrap(~Organ, scales = "free", nrow=2)
 relative_weight
 
-tiff("Relative Organ Weights.tiff", units="in", width=22, height=8, res=100)
+tiff("Relative Organ Weights - age.tiff", units="in", width=22, height=8, res=100)
 (body_weight | relative_weight)+
   plot_layout(guides = "collect") +
   plot_layout(widths = c(2, 3))+
