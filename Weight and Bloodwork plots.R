@@ -9,7 +9,7 @@ library(patchwork)
 
 #####Organ Weight
 #####
-dataW <- dplyr::select(data, PHLNbr, Group, Groups,
+dataW <- dplyr::select(data, PHLNbr, Group, #Groups,
                        Weight, 
                        `Brain Weight`, 
                        `Heart Weight`, 
@@ -18,22 +18,22 @@ dataW <- dplyr::select(data, PHLNbr, Group, Groups,
                        `Lung Weight`, 
                        `Spleen Weight`, Age)
 
-body_weight <- dataW %>% gather(key= "Organ", grams, 4) %>% 
+body_weight <- dataW %>% gather(key= "Organ", grams, 3) %>% 
   ggplot(aes(x = factor(Group), y = grams))+
   geom_boxplot(outlier.shape = NA, colour = "lightgray")+  
   theme_bw() +
   theme(axis.title.x=element_blank(), text = element_text(size = 16))+
-  geom_jitter(aes(x = Group, y = grams, color = dataW$`Age`), width = 0.1, size = 4)+
+  geom_jitter(aes(x = Group, y = grams, color = dataW$`Group`), width = 0.1, size = 4)+
   facet_wrap(~Organ, scales = "free")
 body_weight
 
 organ_weight <- dataW %>% 
-  gather(key= "Organ", grams, 5:10) %>% 
+  gather(key= "Organ", grams, 4:9) %>% 
   ggplot(aes(x = factor(Group), y = grams))+
   geom_boxplot(outlier.shape = NA, colour = "lightgray")+  
   theme_bw() +
   theme(axis.title.x=element_blank(), text = element_text(size = 16))+
-  geom_jitter(aes(x = Group, y = grams, color = `Age`), width = 0.1, size = 4)+
+  geom_jitter(aes(x = Group, y = grams, color = `Group`), width = 0.1, size = 4)+
   facet_wrap(~Organ, scales = "free", nrow=2)
 organ_weight
 
@@ -52,7 +52,7 @@ dev.off()
 #####Relative Organ Weight
 #####
 
-dataWPerc <- dplyr::select(data, PHLNbr,Group, Groups,
+dataWPerc <- dplyr::select(data, PHLNbr,Group, #Groups,
                        Weight, 
                        `Brain % BW`, 
                        `Heart % BW`,
@@ -63,12 +63,12 @@ dataWPerc <- dplyr::select(data, PHLNbr,Group, Groups,
 
 
 relative_weight <- dataWPerc %>% 
-  gather(key= "Organ", value, 5:10) %>% 
+  gather(key= "Organ", value, 4:9) %>% 
   ggplot(aes(x = factor(Group), y = value))+
   geom_boxplot(outlier.shape = NA, colour = "lightgray")+  
   theme_bw() +
   theme(axis.title.x=element_blank(), text = element_text(size = 16))+
-  geom_jitter(aes(x = Group, y = value, color = `Age`), width = 0.1, size = 4)+
+  geom_jitter(aes(x = Group, y = value, color = `Group`), width = 0.1, size = 4)+
   facet_wrap(~Organ, scales = "free", nrow=2)
 relative_weight
 
@@ -90,7 +90,7 @@ dev.off()
 
 ### WBC Plot
 
-dataCBC <- dplyr::select(data, PHLNbr,Group, Groups,
+dataCBC <- dplyr::select(data, PHLNbr,Group, #Groups,
                          WBC,NE,LY,MO,EO,BA,RBC,Hb,HCT,MCH,MCH,MCHC,RDW,Retics,PLT,MPV)
 
 WBC <- dataCBC %>% gather(key= "Value", value, 4) %>% 
