@@ -390,7 +390,7 @@ library(patchwork)
 #   plot_annotation(title = "CBC: White Blood Cell and Platelet Counts")
 # dev.off()
 
-tiff("05. WBC+PLT.tiff", units="in", width=9, height=10, res=300)
+tiff("05. WBC+PLT.tiff", units="in", width=8, height=8, res=200)
 (WBC | NE) / 
   (LY | MO) /
   (EO | BA) /
@@ -404,7 +404,7 @@ dev.off()
 #dev.off()
 
 
-tiff("05. RBC.tiff", units="in", width=9, height=10, res=300)
+tiff("05. RBC.tiff", units="in", width=8, height=8, res=200)
 (HCT | RBC) / 
   (Hb | MCH) /
   (MCHC | MCV) /
