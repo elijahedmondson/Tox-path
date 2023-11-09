@@ -5,8 +5,6 @@ library(ggplot2)
 library(gridExtra)
 library(readxl)
 library(ggpubr)
-library(patchwork)
-library(readxl)
 setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 ###Generate Data
 #data <- read_excel("ADME Tox 202.xlsx", sheet = "Chemistry")
@@ -326,7 +324,7 @@ AMY <- ggplot(data) +
 
 
 tiff("CHEMISTRY.tiff", units="in", width=14, height=12, res=200)
-(TP | AL GLOB | AGR) / 
+(TP | AL | GLOB | AGR) / 
   (BUN | CRE | BCR | GLU) /
   (Ca | PHOS | KPlus | NaPlus) /
   (ALP | ALT | TBIL | AMY) /
