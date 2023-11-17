@@ -390,7 +390,7 @@ MPV <- ggplot(data) +
 #   plot_annotation(title = "CBC: White Blood Cell and Platelet Counts")
 # dev.off()
 
-tiff("WBC+PLT.tiff", units="in", width=8, height=8, res=200)
+tiff("WBC+PLT.tiff", units="in", width=10, height=8, res=200)
 (WBC | NE) / 
   (LY | MO) /
   (EO | BA) /
@@ -404,7 +404,7 @@ dev.off()
 #dev.off()
 
 
-tiff("RBC.tiff", units="in", width=8, height=8, res=200)
+tiff("RBC.tiff", units="in", width=10, height=8, res=200)
 (HCT | RBC) / 
   (Hb | MCH) /
   (MCHC | MCV) /
