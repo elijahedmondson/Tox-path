@@ -12,6 +12,7 @@ library(dplyr)
 library(ggsignif)
 
 
+setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 
 ### Albulmin:Globulin Ratio
 data<-dplyr:: mutate(data, AGR = (ALB/(TP-ALB)))
@@ -23,17 +24,17 @@ names <- colnames(data)
 
 #for 1 levels
 plot_list = list(colnames(data))
-for(i in 15:length(colnames(data))){
+for(i in 10:length(colnames(data))){
   theme_set(theme_bw(12))
   plot_list[[i]] <- local ({
     i <- i
     variable = as.matrix(data[i])
     y_title = colnames(data[i])
-    ggplot(data, aes(x = Group, y = variable, color = Groups)) +  
+    ggplot(data, aes(x = Groups, y = variable, color = Group)) +  
       geom_boxplot(outlier.shape=NA, show.legend = F) +
       scale_y_continuous(name = y_title) + 
       theme(axis.title.x=element_blank()) +
-      geom_point(aes(color = Groups),
+      geom_point(aes(color = Group),
                  position=position_jitterdodge(dodge.width = 0.75, jitter.width = 0.003),
                  size = 2)
   })
@@ -66,19 +67,19 @@ plot_list[[1]]
 library(patchwork)
 setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 tiff("CBC_WBC.tiff", units="in", width=8, height=8, res=200)
-(plot_list[[34]] | plot_list[[35]]) / 
-  (plot_list[[36]]  | plot_list[[37]]) /
-  (plot_list[[38]]  | plot_list[[39]]) /
-  (plot_list[[48]]  | plot_list[[49]]) /
+(plot_list[[21]] | plot_list[[22]]) / 
+  (plot_list[[23]]  | plot_list[[24]]) /
+  (plot_list[[25]]  | plot_list[[26]]) /
+  (plot_list[[35]]  | plot_list[[36]]) /
   plot_layout(guides = "collect") + 
   plot_annotation(title = "CBC: White Blood Cell and Platelet Counts")
 dev.off()
 
 tiff("CBC_RBC.tiff", units="in", width=8, height=8, res=200)
-(plot_list[[40]] | plot_list[[41]]) / 
-  (plot_list[[42]]  | plot_list[[43]]) /
-  (plot_list[[44]]  | plot_list[[45]]) /
-  (plot_list[[46]]  | plot_list[[47]]) /
+(plot_list[[27]] | plot_list[[28]]) / 
+  (plot_list[[29]]  | plot_list[[30]]) /
+  (plot_list[[31]]  | plot_list[[32]]) /
+  (plot_list[[33]]  | plot_list[[34]]) /
   plot_layout(guides = "collect") + 
   plot_annotation(title = "CBC: Erythroid Parameters")
 dev.off()
@@ -111,6 +112,15 @@ tiff("Relative organ weights.tiff", units="in", width=8, height=8, res=200)
 dev.off()
 
 
+
+library(patchwork)
+
+tiff("Relative organ weights.tiff", units="in", width=8, height=8, res=200)
+(plot_list[[13]]) / 
+  (plot_list[[15]]  | plot_list[[17]]) /
+  plot_layout(guides = "collect") #+ 
+  #plot_annotation(title = "Relative Organ Weights (% of body weight)")
+dev.off()
 
 
 
