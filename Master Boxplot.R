@@ -10,9 +10,13 @@ library(tidyverse)
 library(gapminder)
 library(dplyr)
 library(ggsignif)
-
+library(dplyr)
 
 setwd("C:/Users/edmondsonef/Desktop/R-plots/")
+
+#data <- dplyr::filter(data, Censor == 1)
+data <- dplyr::filter(data, Group != "F08")
+
 
 ### Albulmin:Globulin Ratio
 data<-dplyr:: mutate(data, AGR = (ALB/(TP-ALB)))
@@ -67,10 +71,10 @@ plot_list[[1]]
 library(patchwork)
 setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 tiff("CBC_WBC.tiff", units="in", width=8, height=8, res=200)
-(plot_list[[21]] | plot_list[[22]]) / 
-  (plot_list[[23]]  | plot_list[[24]]) /
-  (plot_list[[25]]  | plot_list[[26]]) /
-  (plot_list[[35]]  | plot_list[[36]]) /
+(plot_list[[34]] | plot_list[[35]]) / 
+  (plot_list[[36]]  | plot_list[[37]]) /
+  (plot_list[[38]]  | plot_list[[39]]) /
+  (plot_list[[48]]  | plot_list[[49]]) /
   plot_layout(guides = "collect") + 
   plot_annotation(title = "CBC: White Blood Cell and Platelet Counts")
 dev.off()
