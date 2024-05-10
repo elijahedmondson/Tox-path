@@ -7,9 +7,6 @@ library(readxl)
 library(ggpubr)
 setwd("C:/Users/edmondsonef/Desktop/R-plots/")
 ###Generate Data
-#data <- read_excel("ADME Tox 202.xlsx", sheet = "Chemistry")
-#CBC <- read_excel("ADME Tox 202.xlsx", sheet = "CBC")
-#AData <- read_excel("ADME Tox 202.xlsx", sheet = "Animal Data")
 
 ### Albulmin:Globulin Ratio
 data<-dplyr:: mutate(data, AGR = (ALB/(TP-ALB)))
@@ -25,7 +22,7 @@ ymxAGR = max(data$AGR, na.rm = T)
 yminAGR = min(data$AGR, na.rm = T)
 AGR <- ggplot(data) + 
   scale_y_continuous(name = "Albumin:Globulin", limits=c(yminAGR*.98, ymxAGR*1.02)) +
-  ##geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = AGR, shape = Sex, color = `Groups`), width = 0.1)+
@@ -48,7 +45,7 @@ ymxBCR = max(data$BCR, na.rm = T)
 yminBCR = min(data$BCR, na.rm = T)
 BCR <- ggplot(data) + 
   scale_y_continuous(name = "BUN:Creatinine", limits=c(yminBCR*.98, ymxBCR*1.02)) +
-  ##geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = BCR, shape = Sex, color = `Groups`), width = 0.1)+
@@ -69,7 +66,7 @@ ymxALB = max(data$ALB, na.rm = T)
 yminALB = min(data$ALB, na.rm = T)
 ALB <- ggplot(data) + 
   scale_y_continuous(name = "Albumin", limits=c(yminALB*.98, ymxALB*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = ALB, shape = Sex, color = `Groups`), width = 0.1)+
@@ -91,7 +88,7 @@ ymxALP = max(data$ALP, na.rm = T)
 yminALP = min(data$ALP, na.rm = T)
 ALP <- ggplot(data) + 
   scale_y_continuous(name = "ALP", limits=c(yminALP*.98, ymxALP*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = ALP, shape = Sex, color = `Groups`), width = 0.1)+
@@ -113,7 +110,7 @@ ymxALT = max(data$ALT, na.rm = T)
 yminALT = min(data$ALT, na.rm = T)
 ALT <- ggplot(data) + 
   scale_y_continuous(name = "ALT", limits=c(yminALT*.98, ymxALT*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = ALT, shape = Sex, color = `Groups`), width = 0.1)+
@@ -134,7 +131,7 @@ ymxBUN = max(data$BUN, na.rm = T)
 yminBUN = min(data$BUN, na.rm = T)
 BUN <- ggplot(data) + 
   scale_y_continuous(name = "BUN", limits=c(yminBUN*.98, ymxBUN*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = BUN, shape = Sex, color = `Groups`), width = 0.1)+
@@ -154,11 +151,11 @@ my_info$ref.hi = c(0.5)
 ymxCRE = max(data$CRE, na.rm = T)
 yminCRE = min(data$CRE, na.rm = T)
 CRE <- ggplot(data) + 
-  scale_y_continuous(name = "Creatinine", limits=c(yminCRE*.98, ymxCRE*1.02)) +
-  ##geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  scale_y_continuous(name = "Creatinine", limits=c(yminCRE*.8, ymxCRE*1.2)) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
-  geom_jitter(aes(x = Group, y = CRE, shape = Sex, color = `Groups`), height = 0.01, width = 0.1)+
+  geom_jitter(aes(x = Group, y = CRE, shape = Sex, color = `Groups`), height = 0.001, width = 0.1)+
   theme_bw() +
   theme(axis.text.x=element_text(angle=25,hjust=1)) +
   theme(axis.title.x=element_blank())
@@ -176,7 +173,7 @@ ymxGLU = max(data$GLU, na.rm = T)
 yminGLU = min(data$GLU, na.rm = T)
 GLU <- ggplot(data) + 
   scale_y_continuous(name = "GLU", limits=c(yminGLU*.98, ymxGLU*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = GLU, shape = Sex, color = `Groups`), width = 0.1)+
@@ -197,7 +194,7 @@ ymxTP = max(data$TP, na.rm = T)
 yminTP = min(data$TP, na.rm = T)
 TP <- ggplot(data) + 
   scale_y_continuous(name = "Total Protein", limits=c(yminTP*.98, ymxTP*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = TP, shape = Sex, color = `Groups`), width = 0.1)+
@@ -218,7 +215,7 @@ ymxGLOB = max(data$GLOB, na.rm = T)
 yminGLOB = min(data$GLOB, na.rm = T)
 GLOB <- ggplot(data) + 
   scale_y_continuous(name = "GLOB", limits=c(yminGLOB*.98, ymxGLOB*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = GLOB, shape = Sex, color = `Groups`), width = 0.1)+
@@ -239,7 +236,7 @@ ymxCa = max(data$Ca, na.rm = T)
 yminCa = min(data$Ca, na.rm = T)
 Ca <- ggplot(data) + 
   scale_y_continuous(name = "Ca2+", limits=c(yminCa*.98, ymxCa*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = Ca, shape = Sex, color = `Groups`), width = 0.1)+
@@ -260,7 +257,7 @@ ymxPHOS = max(data$PHOS, na.rm = T)
 yminPHOS = min(data$PHOS, na.rm = T)
 PHOS <- ggplot(data) + 
   scale_y_continuous(name = "PHOS", limits=c(yminPHOS*.98, ymxPHOS*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = PHOS, shape = Sex, color = `Groups`), width = 0.1)+
@@ -281,7 +278,7 @@ ymxNa = max(data$`Na Plus`, na.rm = T)
 yminNa = min(data$`Na Plus`, na.rm = T)
 NaPlus <- ggplot(data) + 
   scale_y_continuous(name = "Na+", limits=c(yminNa*.98, ymxNa*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = `Na Plus`, shape = Sex, color = `Groups`), width = 0.1)+
@@ -302,7 +299,7 @@ ymxKPlus = max(data$KPlus, na.rm = T)
 yminKPlus = min(data$KPlus, na.rm = T)
 KPlus <- ggplot(data) + 
   scale_y_continuous(name = "K+", limits=c(yminKPlus*.98, ymxKPlus*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = KPlus, shape = Sex, color = `Groups`), width = 0.1)+
@@ -323,7 +320,7 @@ ymxTBIL = max(data$TBIL, na.rm = T)
 yminTBIL = min(data$TBIL, na.rm = T)
 TBIL <- ggplot(data) + 
   scale_y_continuous(name = "TBIL", limits=c(yminTBIL*.98, ymxTBIL*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = TBIL, shape = Sex, color = `Groups`), width = 0.1, height = 0.001)+
@@ -345,7 +342,7 @@ ymxAMY = max(data$AMY, na.rm = T)
 yminAMY = min(data$AMY, na.rm = T)
 AMY <- ggplot(data) + 
   scale_y_continuous(name = "AMY", limits=c(yminAMY*.98, ymxAMY*1.02)) +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   #geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7) +
   geom_jitter(aes(x = Group, y = AMY, shape = Sex, color = `Groups`), width = 0.1)+
@@ -355,7 +352,7 @@ AMY <- ggplot(data) +
 
 
 
-tiff("CHEMISTRY.tiff", units="in", width=15, height=10, res=200)
+tiff("Clinical Chemistry.tiff", units="in", width=13, height=7, res=200)
 (TP | ALB | GLOB | AGR) / 
   (BUN | CRE | BCR | GLU) /
   (Ca | PHOS | KPlus | NaPlus) /
