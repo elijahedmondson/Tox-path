@@ -202,25 +202,24 @@ Thymus <- ggplot(data) +
 #   plot_annotation(title = "Absolute Organ Weights (grams)")
 # dev.off()
 
-tiff("Absolute Organ Weights.tiff", units="in", width=10, height=10, res=300)
-#(BW | Thymus) /
-# (BW | Graft) /
-(BW) /
- (Brain | Heart) /
- (Lung | Kidney) /
- (Spleen | Liver) /
- plot_layout(guides = "collect") +
- plot_annotation(title = "Absolute Organ Weights (grams)")
-dev.off()
-
-# tiff("Absolute Organ Weights.tiff", units="in", width=8, height=8, res=200)
-#   (BW | Heart) /
-#   (Spleen | Liver) /
-#   (Kidney | Lung) /
-#     plot_layout(guides = "collect") +
-#   plot_annotation(title = "Absolute Organ Weights (grams)")
+# tiff("Absolute Organ Weights.tiff", units="in", width=10, height=10, res=300)
+# #(BW | Thymus) /
+# # (BW | Graft) /
+# (BW) /
+#  (Brain | Heart) /
+#  (Lung | Kidney) /
+#  (Spleen | Liver) /
+#  plot_layout(guides = "collect") +
+#  plot_annotation(title = "Absolute Organ Weights (grams)")
 # dev.off()
-# 
+
+tiff("Absolute Organ Weights.tiff", units="in", width=9, height=8, res=200)
+(BW) /
+  (Brain | Liver) /
+  (Spleen | Lung) /
+  plot_layout(guides = "collect") +
+  plot_annotation(title = "Absolute Organ Weights (% BW)")
+dev.off()
 
 
 
@@ -434,24 +433,24 @@ my_info$CIdiff = ((my_CI$CI[,2] - my_CI$CI[,1])/2)
 # dev.off()
 
 
-tiff("Relative Organ Weights.tiff", units="in", width=10, height=10, res=300)
-#(BW | Thymus) /
-#(BW | Graft) /
+# tiff("Relative Organ Weights.tiff", units="in", width=10, height=10, res=300)
+# #(BW | Thymus) /
+# #(BW | Graft) /
+# (BW) /
+#   (Brain | Heart) /
+#   (Lung | Kidney) /
+#   (Spleen | Liver) /
+#   plot_layout(guides = "collect") +
+#   plot_annotation(title = "Relative Organ Weights (% of body weight)")
+# dev.off()
+
+
+
+tiff("Relative Organ Weights.tiff", units="in", width=9, height=8, res=200)
 (BW) /
-  (Brain | Heart) /
-  (Lung | Kidney) /
-  (Spleen | Liver) /
+  (Brain | Liver) /
+  (Spleen | Lung) /
   plot_layout(guides = "collect") +
-  plot_annotation(title = "Relative Organ Weights (% of body weight)")
+  plot_annotation(title = "Relative Organ Weights (% BW)")
 dev.off()
 
-
-# 
-# tiff("Relative Organ Weights.tiff", units="in", width=8, height=8, res=200)
-# (BW | Heart) /
-#   (Spleen | Liver) /
-#   (Kidney | Lung) /
-#   plot_layout(guides = "collect") +
-#   plot_annotation(title = "Relative Organ Weights (% BW)")
-# dev.off()
-# 

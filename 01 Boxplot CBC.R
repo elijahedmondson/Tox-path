@@ -59,7 +59,7 @@ my_info$ref.hi = c(6.99)
 ### Lymphocyes plot
 LY <- ggplot(data) + 
   scale_y_continuous(name = "Lymphocyes") +
-  #geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
+  geom_errorbar(data = my_info, aes(x = Group, ymin = ref.low, ymax = ref.hi), color = "#f5f5f5", width = 0, size=10) +
   geom_jitter(aes(x = Group, y = LY, shape = Sex, color = `Groups`), width = 0.1, show.legend=T)+
   geom_point(data = my_info, aes(x = Group , y = mean), color = "#a9a9a9", size = 1.5) +
   geom_errorbar(data = my_info, aes(x = Group, y = CIdiff, ymin = mean - CIdiff, ymax = mean + CIdiff), color = "#a9a9a9", width = 0.2 , size=0.7)  +
@@ -406,7 +406,7 @@ MPV <- ggplot(data) +
 #   plot_annotation(title = "CBC: White Blood Cell and Platelet Counts")
 # dev.off()
 
-tiff("WBC+PLT.tiff", units="in", width=11, height=8, res=200)
+tiff("WBC+PLT.tiff", units="in", width=7, height=6, res=300)
 (WBC | NE) / 
   (LY | MO) /
   (EO | BA) /
@@ -420,7 +420,7 @@ dev.off()
 #dev.off()
 
 
-tiff("RBC.tiff", units="in", width=11, height=8, res=200)
+tiff("RBC.tiff", units="in", width=7, height=6, res=300)
 (HCT | RBC) / 
   (Hb | MCH) /
   (MCHC | MCV) /
